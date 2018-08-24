@@ -4,6 +4,7 @@ import { AngularFirestore } from 'angularfire2/firestore';
 import { NotesService } from './services/notes.services';
 import { MatSnackBar } from '@angular/material';
 import { AuthService } from './services/auth.service';
+import { MessagingService } from './services/messaging.service';
 
 
 @Component({
@@ -17,8 +18,9 @@ export class AppComponent implements OnInit{
   categorias = ['trabajo', 'personal'];
   nota: any = {};
   notas: any = [];
+  message: any = {};
   
-  constructor(private swUpdate: SwUpdate, private frb: AngularFirestore, private noteService: NotesService, public snackBar: MatSnackBar, private authService: AuthService){
+  constructor(private swUpdate: SwUpdate, private frb: AngularFirestore, private noteService: NotesService, public snackBar: MatSnackBar, private authService: AuthService, private messageService: MessagingService){
    
   }
 
@@ -30,6 +32,10 @@ export class AppComponent implements OnInit{
     }
 
     this.listarNotas();
+
+    this.messageService.getPermission();
+    this.messageService.receiveMessage();
+    this.message = this.messageService.currentMessage;
     
   }
 
@@ -84,7 +90,4 @@ export class AppComponent implements OnInit{
   login(){
     this.authService.loginWithFacebook();
   }
-
-
-
 }

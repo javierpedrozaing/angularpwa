@@ -3,6 +3,9 @@
 
 <div style="text-align:center">
     <button mat-raised-button (click)="login()">LOGIN CON FACEBBOK</button>
+
+    {{message | async | json}}
+
   <h1>
     Welcome to {{ title }} v3
   </h1>

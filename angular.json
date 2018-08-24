@@ -22,7 +22,7 @@
               "src/favicon.ico",
               "src/assets",
               "src/manifest.json",
-              "fireabase-messaging-sw.js"
+              "src/fireabase-messaging-sw.js"
             ],
             "styles": [
               "src/styles.css"
