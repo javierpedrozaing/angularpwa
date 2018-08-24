@@ -25,14 +25,13 @@
   ],
   "dataGroups": [
     {
-      "name":  "ReditAPI",
+      "name":  "Firebase API",
       "urls": [
-        "https.//reddit.com/r/pics.json",
-        "https.//reddit.com/r/**"  
+        "https://angularpwa-9e859.firebaseio.com/**"        
       ],
       "cacheConfig":{
         "strategy": "freshness",
-        "maxAge": "1d",
+        "maxAge": "3h",
         "maxSize": 100,
         "timeout": "5s"
       }
